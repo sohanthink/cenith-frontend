@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* fonts */
+  --font-source-sans-pro: "Source Sans Pro", sans-serif;
+  --font-catamaran: "Catamaran", sans-serif;
+
+  /* colors */
+  --color-primary: #0082e0;
+  --color-black: #0a324f;
+  --color-text: #191c1f;
+  --color-accent: #141d3f;
+  --color-himalayan-white: #f5f8fe;
+  --color-yellow: #ffb10b;
+}
+
+@theme {
+  --font-primary: var(--font-source-sans-pro);
+  --font-secondary: var(--font-catamaran);
+  --color-primary: var(--color-primary);
+  --color-black: var(--color-black);
+  --color-text: var(--color-text);
+  --color-accent: var(--color-accent);
+  --color-himalayan-white: var(--color-himalayan-white);
+  --color-yellow: var(--color-yellow);
+}
+
+body {
+  font-family: var(--font-secondary);
+}
+
+/* Start of Search Container For Banner Section */
+.floating-btn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 32px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.search-container {
+  border: 1.5px solid var(--color-primary);
+  border-radius: 999px;
+  padding: 16px 24px;
+  /* padding-left: 200px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: padding 0.3s ease;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 60%;
+}
+
+.search-input input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-wrapper:focus-within .floating-btn {
+  top: -28px;
+  transform: translateY(0);
+  background: var(--color-accent);
+}
+
+.search-wrapper:focus-within .search-container {
+  padding-top: 28px;
+}
+/* End of Search Container For Banner Section */
