@@ -14,6 +14,7 @@
   --color-accent: #141d3f;
   --color-himalayan-white: #f5f8fe;
   --color-yellow: #ffb10b;
+  --color-gray: #787a7f;
 }
 
 @theme {
@@ -25,12 +26,24 @@
   --color-accent: var(--color-accent);
   --color-himalayan-white: var(--color-himalayan-white);
   --color-yellow: var(--color-yellow);
+  --color-gray: var(--color-gray);
 }
 
 body {
   font-family: var(--font-secondary);
 }
 
+h2 {
+  @apply text-5xl font-bold font-primary;
+}
+
+h3 {
+  @apply text-3xl font-bold font-primary;
+}
+
+h5 {
+  @apply text-xl font-bold font-primary;
+}
 /* Start of Search Container For Banner Section */
 .floating-btn {
   position: absolute;

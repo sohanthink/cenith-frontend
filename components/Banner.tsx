@@ -5,7 +5,7 @@ import Image from "next/image";
 const Banner = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="container mx-auto px-2 sm:px-6 py-12 md:py-20">
+      <div className="container mx-auto px-2 sm:px-6 py-12 md:py-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:pl-7">
           <div>
             <div className="inline-block mb-4">
