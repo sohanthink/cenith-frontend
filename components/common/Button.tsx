@@ -5,8 +5,10 @@ import Link from "next/link";
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "link";
 type ButtonSize = "sm" | "md" | "lg";
 
-export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "size"> {
+export interface ButtonProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "size"
+> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   fullWidth?: boolean;
@@ -30,7 +32,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       ...props
     },
-    ref
+    ref,
   ) => {
     const baseStyles =
       "inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed font-secondary cursor-pointer";
@@ -87,7 +89,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {RightIcon && <RightIcon className="w-4 h-4 ml-2" />}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = "Button";

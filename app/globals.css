@@ -41,6 +41,10 @@ h3 {
   @apply text-3xl font-bold font-primary;
 }
 
+h4 {
+  @apply text-2xl font-bold font-primary;
+}
+
 h5 {
   @apply text-xl font-bold font-primary;
 }

@@ -1,8 +1,22 @@
-import Banner from "@/components/Banner";
 import Benefits from "@/components/Benefits";
+import Button from "@/components/common/Button";
 import Experience from "@/components/Experience";
-import { benefits, experience, worksType } from "@/data/homeData";
+import Locations from "@/features/home/Locations";
+import {
+  benefits,
+  experience,
+  partners,
+  reviews,
+  worksType,
+} from "@/data/homeData";
+import { ChevronLeft, ChevronRight, StarIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import Banner from "@/features/home/Banner";
+import BookingSection from "@/features/home/BookingSection";
+import Faq from "@/features/home/Faq";
+import WorldMap from "@/features/home/WorldMap";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -69,6 +83,149 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="container mx-auto px-2 sm:px-6 py-12 md:py-24">
+        <h2 className="text-center text-black mb-12">
+          What people say about us
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="flex flex-col items-center justify-center gap-2 border-2 border-primary border-dashed rounded-xl p-24">
+            <p className="text-black text-2xl font-bold font-primary">
+              Excellent
+            </p>
+            <h2 className="text-black font-primary">5.0</h2>
+            <div className="flex items-center gap-2">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon
+                  key={i}
+                  width={16}
+                  height={16}
+                  className="text-yellow"
+                  fill="currentColor"
+                />
+              ))}
+            </div>
+            <p className="text-text">Based on 15,29 reviews</p>
+            <Link href="/reviews" className="text-primary hover:underline">
+              See all reviews
+            </Link>
+          </div>
+          {reviews.map((item, index) => (
+            <div
+              key={index}
+              className="bg-himalayan-white rounded-xl px-7 py-12"
+            >
+              <div className="flex items-center gap-2">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon
+                    key={i}
+                    width={16}
+                    height={16}
+                    className="text-yellow"
+                    fill="currentColor"
+                  />
+                ))}
+              </div>
+              <p className="my-6 text-text">{item.description}</p>
+              <h5 className="text-black font-bold font-primary">{item.name}</h5>
+              <p className="text-text mt-1">{item.designation}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex items-center justify-center mt-10 gap-4">
+          <div className="cursor-pointer p-2 rounded-full border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out w-10 h-10 flex items-center justify-center group">
+            <ChevronLeft
+              width={20}
+              height={20}
+              className="text-primary group-hover:text-white transition-all duration-300 ease-in-out"
+            />
+          </div>
+          <div className="cursor-pointer p-2 rounded-full border-2 border-primary hover:bg-primary hover:text-white transition-all duration-300 ease-in-out w-10 h-10 flex items-center justify-center group">
+            <ChevronRight
+              width={20}
+              height={20}
+              className="text-primary  group-hover:text-white transition-all duration-300 ease-in-out"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary relative">
+        <div className="absolute top-0 left-0 w-full h-full z-0">
+          <Image
+            src="/home/booktap-bg.webp"
+            alt="Book in 3 taps"
+            width={1000}
+            height={1000}
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div className="container mx-auto px-2 sm:px-6 py-12 md:py-24 overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center justify-between z-10 relative">
+            <div className="lg:w-1/2 text-white">
+              <h2 className="text-white font-primary">Book In 3 Taps</h2>
+              <p className="mb-6 font-secondary mt-4 text-white">
+                Instantly find locations nearby to drop off your luggage
+                <br />
+                wherever you go.
+              </p>
+              <Button variant="ghost" className="bg-white text-primary">
+                Find Closest Locations
+              </Button>
+            </div>
+
+            <div className="lg:w-1/2 flex justify-start absolute top-0 right-0 h-full">
+              <div className="relative h-full">
+                <Image
+                  src="/home/booktap-1.png"
+                  alt="Happy traveler with phone and luggage"
+                  className="w-full max-w-md rounded-lg object-contain"
+                  width={500}
+                  height={500}
+                />
+                <div className="absolute top-0 left-1/2 translate-x-1/2 w-full h-full -z-10">
+                  <Image
+                    src="/home/booktap-2.webp"
+                    alt="Happy traveler with phone and luggage"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-full object-contain scale-[4]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container mx-auto px-2 sm:px-6 py-12 md:py-24">
+        <div>
+          <h2 className="text-center text-black mb-20">Our Partners</h2>
+          <div className="flex justify-between items-center gap-12 lg:gap-16">
+            {partners.map((partner, index) => (
+              <div key={index}>
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="w-full h-full object-contain"
+                  width={500}
+                  height={500}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Locations />
+
+      <BookingSection />
+
+      <Faq />
+
+      <WorldMap />
+
+      <Footer />
     </main>
   );
 }

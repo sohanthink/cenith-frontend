@@ -3,10 +3,7 @@
 // This file validates that all pages and layouts export the correct types
 
 import type { AppRoutes, LayoutRoutes, ParamMap } from "./routes.js";
-import type {
-  ResolvingMetadata,
-  ResolvingViewport,
-} from "next/types.js";
+import type { ResolvingMetadata, ResolvingViewport } from "next/types.js";
 
 type AppPageConfig<Route extends AppRoutes = AppRoutes> = {
   default:
@@ -14,7 +11,7 @@ type AppPageConfig<Route extends AppRoutes = AppRoutes> = {
         { params: Promise<ParamMap[Route]> } & Record<string, unknown>
       >
     | ((
-        props: { params: Promise<ParamMap[Route]> } & Record<string, unknown>
+        props: { params: Promise<ParamMap[Route]> } & Record<string, unknown>,
       ) =>
         | React.ReactNode
         | Promise<React.ReactNode>
@@ -26,11 +23,11 @@ type AppPageConfig<Route extends AppRoutes = AppRoutes> = {
   }) => Promise<Record<string, unknown>[]> | Record<string, unknown>[];
   generateMetadata?: (
     props: { params: Promise<ParamMap[Route]> } & Record<string, unknown>,
-    parent: ResolvingMetadata
+    parent: ResolvingMetadata,
   ) => Promise<Record<string, unknown>> | Record<string, unknown>;
   generateViewport?: (
     props: { params: Promise<ParamMap[Route]> } & Record<string, unknown>,
-    parent: ResolvingViewport
+    parent: ResolvingViewport,
   ) => Promise<Record<string, unknown>> | Record<string, unknown>;
   metadata?: Record<string, unknown>;
   viewport?: Record<string, unknown>;
@@ -40,7 +37,7 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   default:
     | React.ComponentType<LayoutProps<Route>>
     | ((
-        props: LayoutProps<Route>
+        props: LayoutProps<Route>,
       ) =>
         | React.ReactNode
         | Promise<React.ReactNode>
@@ -52,11 +49,11 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   }) => Promise<Record<string, unknown>[]> | Record<string, unknown>[];
   generateMetadata?: (
     props: { params: Promise<ParamMap[Route]> } & Record<string, unknown>,
-    parent: ResolvingMetadata
+    parent: ResolvingMetadata,
   ) => Promise<Record<string, unknown>> | Record<string, unknown>;
   generateViewport?: (
     props: { params: Promise<ParamMap[Route]> } & Record<string, unknown>,
-    parent: ResolvingViewport
+    parent: ResolvingViewport,
   ) => Promise<Record<string, unknown>> | Record<string, unknown>;
   metadata?: Record<string, unknown>;
   viewport?: Record<string, unknown>;

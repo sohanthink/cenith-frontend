@@ -12,7 +12,9 @@ const ClosestLocations = () => {
       >
         <Minus className="w-4 h-4" color="var(--color-yellow)" />
       </button>
-      <span className="text-sm font-medium text-accent text-nowrap">{bags} Bags</span>
+      <span className="text-sm font-medium text-accent text-nowrap">
+        {bags} Bags
+      </span>
       <button
         onClick={() => setBags(bags + 1)}
         className="w-6 h-6 flex items-center justify-center"

@@ -1,5 +1,5 @@
+import ClosestLocations from "@/components/ClosestLocations";
 import { Search } from "lucide-react";
-import ClosestLocations from "./ClosestLocations";
 import Image from "next/image";
 
 const Banner = () => {

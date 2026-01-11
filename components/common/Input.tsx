@@ -4,8 +4,10 @@ import { LucideIcon } from "lucide-react";
 type InputSize = "sm" | "md" | "lg";
 type InputVariant = "default" | "error" | "success";
 
-export interface InputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+export interface InputProps extends Omit<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  "size"
+> {
   label?: string;
   error?: string;
   helperText?: string;
@@ -32,9 +34,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       id,
       ...props
     },
-    ref
+    ref,
   ) => {
-    const inputId = id || `input-${Math.random().toString(36).substring(2, 11)}`;
+    const inputId =
+      id || `input-${Math.random().toString(36).substring(2, 11)}`;
     const hasError = variant === "error" || !!error;
 
     const baseStyles =
@@ -58,9 +61,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const containerBaseStyles =
       "flex items-center gap-3 rounded-xl transition-all duration-200";
     const containerVariantStyles = {
-      default: "border border-gray-200 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20",
-      error: "border border-red-500 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20",
-      success: "border border-green-500 focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20",
+      default:
+        "border border-gray-200 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20",
+      error:
+        "border border-red-500 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20",
+      success:
+        "border border-green-500 focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20",
     };
 
     const iconSizeStyles = {
@@ -75,8 +81,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       success: "text-green-500",
     };
 
-    const inputClassName = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`.trim();
-    const containerClassName = `${containerBaseStyles} ${containerVariantStyles[variant]} ${fullWidth ? "w-full" : ""} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`.trim();
+    const inputClassName =
+      `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`.trim();
+    const containerClassName =
+      `${containerBaseStyles} ${containerVariantStyles[variant]} ${fullWidth ? "w-full" : ""} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`.trim();
 
     return (
       <div className={fullWidth ? "w-full" : ""}>
@@ -130,10 +138,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = "Input";
 
 export default Input;
-
