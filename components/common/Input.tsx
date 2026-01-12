@@ -2,7 +2,7 @@ import React from "react";
 import { LucideIcon } from "lucide-react";
 
 type InputSize = "sm" | "md" | "lg";
-type InputVariant = "default" | "error" | "success";
+type InputVariant = "default" | "error" | "success" | "search";
 
 export interface InputProps extends Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -34,19 +34,18 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       id,
       ...props
     },
-    ref,
+    ref
   ) => {
-    const inputId =
-      id || `input-${Math.random().toString(36).substring(2, 11)}`;
+    const inputId = id || `input-${crypto.randomUUID().substring(2, 11)}`;
     const hasError = variant === "error" || !!error;
 
     const baseStyles =
       "w-full outline-none transition-all duration-200 font-primary disabled:opacity-50 disabled:cursor-not-allowed";
 
     const sizeStyles = {
-      sm: "px-3 py-2 text-sm",
-      md: "px-4 py-3 text-base",
-      lg: "px-5 py-4 text-lg",
+      sm: "px-3 py-1 text-sm",
+      md: "px-4 py-2 text-base",
+      lg: "px-5 py-3 text-lg",
     };
 
     const variantStyles = {
@@ -56,10 +55,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         "border border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20",
       success:
         "border border-green-500 focus:border-green-500 focus:ring-2 focus:ring-green-500/20",
+      search: "",
     };
 
     const containerBaseStyles =
-      "flex items-center gap-3 rounded-xl transition-all duration-200";
+      "flex items-center gap-3 transition-all duration-200";
     const containerVariantStyles = {
       default:
         "border border-gray-200 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20",
@@ -67,6 +67,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         "border border-red-500 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20",
       success:
         "border border-green-500 focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20",
+      search:
+        "border border-gray/50 focus-within:border-gray/50 focus-within:ring-1 focus-within:ring-gray/50 rounded-full px-4",
     };
 
     const iconSizeStyles = {
@@ -79,6 +81,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       default: "text-gray-400",
       error: "text-red-500",
       success: "text-green-500",
+      search: "text-gray/50",
     };
 
     const inputClassName =
@@ -101,7 +104,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <div className={containerClassName}>
           {LeftIcon && (
             <LeftIcon
-              className={`${iconSizeStyles[size]} ${iconColorStyles[variant]} flex-shrink-0`}
+              className={`${iconSizeStyles[size]} ${iconColorStyles[variant]} flex-shrink-0 cursor-pointer`}
             />
           )}
 
@@ -121,7 +124,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
           {RightIcon && (
             <RightIcon
-              className={`${iconSizeStyles[size]} ${iconColorStyles[variant]} flex-shrink-0`}
+              className={`${iconSizeStyles[size]} ${iconColorStyles[variant]} flex-shrink-0 cursor-pointer`}
             />
           )}
         </div>
@@ -138,7 +141,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Input.displayName = "Input";
