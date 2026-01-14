@@ -9,7 +9,7 @@ import Input from "./common/Input";
 const LocationNavbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <nav className="bg-himalayan-white sticky top-0 z-50">
+    <nav className="bg-white sticky top-0 z-50">
       <div className="px-2 sm:px-6 font-secondary">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}

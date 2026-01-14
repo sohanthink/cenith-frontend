@@ -62,7 +62,7 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 // Validate ../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific;
-  const handler = {} as typeof import("../app/page.tsx");
+  const handler = {} as typeof import("../app/(public)/page.tsx");
   type __Check = __IsExpected<typeof handler>;
   /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
   /* @ts-ignore */

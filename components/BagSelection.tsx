@@ -15,7 +15,7 @@ const BagSelection = () => {
       ...prev,
       [type as keyof typeof bags]: Math.max(
         0,
-        prev[type as keyof typeof bags] + delta
+        prev[type as keyof typeof bags] + delta,
       ),
     }));
   };
