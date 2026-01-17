@@ -5,6 +5,7 @@ import Locations from "@/features/home/Locations";
 import {
   benefits,
   experience,
+  faqs,
   partners,
   reviews,
   worksType,
@@ -15,7 +16,7 @@ import Link from "next/link";
 import Banner from "@/features/home/Banner";
 import BookingSection from "@/features/home/BookingSection";
 import Faq from "@/features/home/Faq";
-import WorldMap from "@/features/home/WorldMap";
+import WorldMap from "@/components/WorldMap";
 import PeopleSay from "@/components/PeopleSay";
 
 export default function Home() {
@@ -84,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      <PeopleSay dataCount={2}/>
+      <PeopleSay dataCount={2} />
 
       <section className="bg-primary relative">
         <div className="absolute top-0 left-0 w-full h-full z-0">
@@ -157,7 +158,7 @@ export default function Home() {
 
       <BookingSection />
 
-      <Faq />
+      <Faq faqsData={faqs} />
 
       <WorldMap />
     </main>

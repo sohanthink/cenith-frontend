@@ -1,9 +1,12 @@
 "use client";
-import { faqs } from "@/data/homeData";
 import { Minus, Plus } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
-const Faq = () => {
+const Faq = ({
+  faqsData,
+}: {
+  faqsData: { id: number; question: string; answer: string }[];
+}) => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   return (
     <section className="container mx-auto px-2 sm:px-6 py-12 md:py-24">
@@ -14,7 +17,7 @@ const Faq = () => {
           </h2>
 
           <div className="space-y-4">
-            {faqs.map((faq) => (
+            {faqsData.map((faq) => (
               <div key={faq.id} className="border-b-2 border-b-text/50 pb-5">
                 <button
                   onClick={() =>
