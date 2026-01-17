@@ -63,6 +63,24 @@ export const reviews = [
     description:
       "I was in Palermo and thanks to Nannybag I was able to leave my suitcase for only 6 euros in a place near my hotel and the train station. Easy and fast booking, delivery and collection as well.",
   },
+  {
+    name: "Maurizio Castelli",
+    designation: "In Palermo",
+    description:
+      "I was in Palermo and thanks to Nannybag I was able to leave my suitcase for only 6 euros in a place near my hotel and the train station. Easy and fast booking, delivery and collection as well.",
+  },
+  {
+    name: "Maurizio Castelli",
+    designation: "In Palermo",
+    description:
+      "I was in Palermo and thanks to Nannybag I was able to leave my suitcase for only 6 euros in a place near my hotel and the train station. Easy and fast booking, delivery and collection as well.",
+  },
+  {
+    name: "Maurizio Castelli",
+    designation: "In Palermo",
+    description:
+      "I was in Palermo and thanks to Nannybag I was able to leave my suitcase for only 6 euros in a place near my hotel and the train station. Easy and fast booking, delivery and collection as well.",
+  },
 ];
 
 export const partners = [
