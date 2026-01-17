@@ -14,12 +14,17 @@ interface IProps {
     distance: number;
     price: number;
   };
+  variant?: "primary" | "secondary";
 }
 
-const StoreCard = ({ data }: IProps) => {
+const StoreCard = ({ data, variant = "primary" }: IProps) => {
   return (
-    <div className="grid grid-cols-7 items-center justify-between gap-3 bg-white shadow rounded-lg p-3 group hover:bg-primary transition-all duration-300">
-      <div className="col-span-2 overflow-hidden rounded-lg">
+    <div
+      className={`${variant === "primary" ? "grid grid-cols-7" : "flex flex-col gap-4"} items-center justify-between gap-3 bg-white shadow rounded-lg p-3 group hover:bg-primary transition-all duration-300`}
+    >
+      <div
+        className={`overflow-hidden rounded-lg ${variant === "primary" ? "col-span-2" : "w-full h-60 object-cover"}`}
+      >
         <Image
           src="/store-card.png"
           alt="store card"
@@ -28,7 +33,9 @@ const StoreCard = ({ data }: IProps) => {
           className="object-cover rounded-lg w-full h-full group-hover:scale-105 transition-all duration-300"
         />
       </div>
-      <div className="flex flex-col gap-3 col-span-5">
+      <div
+        className={`${variant === "primary" ? "flex flex-col gap-3 col-span-5" : "w-full"}`}
+      >
         <div>
           <p className="font-semibold text-black group-hover:text-white transition-all duration-300">
             {data.title}
@@ -60,7 +67,9 @@ const StoreCard = ({ data }: IProps) => {
           </span>
         </div>
 
-        <div className="flex items-center gap-2 justify-between border-t border-gray/50 pt-3">
+        <div
+          className={`flex items-center gap-2 justify-between border-t border-gray/50 pt-3 ${variant === "primary" ? "" : "mt-3"}`}
+        >
           <div className="text-sm text-text group-hover:text-white transition-all duration-300">
             From ${data.price}/ day
           </div>

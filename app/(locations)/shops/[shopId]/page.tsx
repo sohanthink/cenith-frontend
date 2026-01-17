@@ -1,7 +1,11 @@
 "use client";
+import CancellationPolicyModal from "@/features/shops/CancellationPolicyModal";
 import ConfirmationStep from "@/features/shops/ConfirmationStep";
 import ContactStep from "@/features/shops/ContactStep";
+import CouponModal from "@/features/shops/CouponModal";
+import NearbyLocation from "@/features/shops/NearbyLocation";
 import OpeningHours from "@/features/shops/OpeningHours";
+import PaymentMethodModal from "@/features/shops/PaymentMethodModal";
 import PriceDetails from "@/features/shops/PriceDetails";
 import ProtectionInfo from "@/features/shops/ProtectionInfo";
 import Reviews from "@/features/shops/Reviews";
@@ -97,9 +101,30 @@ export default function ShopPage() {
               />
             )}
             {step === "price" && (
-              <PriceDetails onNext={() => setStep("confirmation")} />
+              <PriceDetails onNext={() => setStep("cancellation-policy")} />
+            )}
+            {step === "cancellation-policy" && (
+              <CancellationPolicyModal
+                isOpen={true}
+                onClose={() => setStep("coupon")}
+              />
+            )}
+            {step === "coupon" && (
+              <CouponModal
+                isOpen={true}
+                onClose={() => setStep("payment-method")}
+              />
+            )}
+            {step === "payment-method" && (
+              <PaymentMethodModal
+                isOpen={true}
+                onClose={() => setStep("complete")}
+              />
             )}
           </div>
+        </div>
+        <div className="mt-10">
+          <NearbyLocation />
         </div>
       </div>
     </div>
