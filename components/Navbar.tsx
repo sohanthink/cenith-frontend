@@ -57,10 +57,13 @@ const Navbar = () => {
               Login
             </Link>
 
-            <button className="flex items-center gap-1 text-black hover:text-primary transition-colors">
+            <Link
+              href="/languages"
+              className="flex items-center gap-1 text-black hover:text-primary transition-colors"
+            >
               <Globe className="w-4 h-4" />
               <span className="font-medium">English</span>
-            </button>
+            </Link>
 
             <Button variant="outline" size="md">
               <span className="font-semibold ">Luggage Storage</span>
@@ -114,10 +117,13 @@ const Navbar = () => {
               >
                 Login
               </Link>
-              <button className="flex items-center gap-1 text-black hover:text-primary w-fit">
+              <Link
+                href="/languages"
+                className="flex items-center gap-1 text-black hover:text-primary w-fit"
+              >
                 <Globe className="w-4 h-4" />
                 <span className="font-medium">English</span>
-              </button>
+              </Link>
               <button className="px-6 py-2.5 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-white transition-all w-fit">
                 Luggage Storage
               </button>

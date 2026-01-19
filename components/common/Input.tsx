@@ -58,19 +58,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       search: "",
     };
 
-    const containerBaseStyles =
-      "flex items-center gap-3 transition-all duration-200";
-    const containerVariantStyles = {
-      default:
-        "border border-gray-200 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20",
-      error:
-        "border border-red-500 focus-within:border-red-500 focus-within:ring-2 focus-within:ring-red-500/20",
-      success:
-        "border border-green-500 focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20",
-      search:
-        "border border-gray/50 focus-within:border-gray/50 focus-within:ring-1 focus-within:ring-gray/50 rounded-full px-4",
-    };
-
     const iconSizeStyles = {
       sm: "w-4 h-4",
       md: "w-5 h-5",
@@ -86,8 +73,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     const inputClassName =
       `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`.trim();
-    const containerClassName =
-      `${containerBaseStyles} ${containerVariantStyles[variant]} ${fullWidth ? "w-full" : ""} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`.trim();
 
     return (
       <div className={fullWidth ? "w-full" : ""}>
@@ -101,7 +86,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </label>
         )}
 
-        <div className={containerClassName}>
+        <div className="flex items-center gap-3">
           {LeftIcon && (
             <LeftIcon
               className={`${iconSizeStyles[size]} ${iconColorStyles[variant]} flex-shrink-0 cursor-pointer`}
