@@ -31,15 +31,15 @@ const PageOne = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12">
+    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12">
       <div className="w-full max-w-2xl">
         {/* Title */}
-        <h2 className="text-black text-center mb-6">
+        <h2 className="text-black text-center mb-4 sm:mb-5 md:mb-6">
           Partner Terms And Conditions
         </h2>
 
         {/* Subtitle */}
-        <p className="text-center text-black mb-8">
+        <p className="text-center text-black mb-6 sm:mb-7 md:mb-8">
           To sign up with Bounce, you need to accept our{" "}
           <Link href="#" className="text-primary hover:underline font-medium">
             Partner Terms and Conditions
@@ -47,15 +47,17 @@ const PageOne = () => {
         </p>
 
         {/* Terms List */}
-        <div className="space-y-6 mb-8">
+        <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-6 sm:mb-7 md:mb-8">
           {terms.map((term, index) => (
-            <div key={index} className="flex gap-4">
+            <div key={index} className="flex gap-3 sm:gap-4">
               <div
-                className={`shrink-0 w-12 h-12 ${term.iconBg} rounded-lg flex items-center justify-center`}
+                className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 ${term.iconBg} rounded-lg flex items-center justify-center`}
               >
-                <term.icon className={`w-6 h-6 ${term.iconColor}`} />
+                <term.icon
+                  className={`w-5 h-5 sm:w-6 sm:h-6 ${term.iconColor}`}
+                />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <p className="text-black leading-relaxed">
                   <span className="font-semibold">{term.title}</span>{" "}
                   {term.description}
@@ -66,7 +68,7 @@ const PageOne = () => {
         </div>
 
         {/* Footer Text */}
-        <p className="text-center text-black text-sm mb-8">
+        <p className="text-center text-black text-xs sm:text-sm mb-6 sm:mb-7 md:mb-8 px-2">
           By proceeding you agree to our{" "}
           <Link href="#" className="text-primary hover:underline font-medium">
             Partner Terms and Conditions
@@ -79,14 +81,14 @@ const PageOne = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex gap-4 justify-center">
-          <Button variant="primary" size="lg">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <Button variant="primary" size="lg" className="w-full sm:w-auto">
             Accept And Continue
           </Button>
           <Button
             variant="secondary"
             size="lg"
-            className="bg-black hover:bg-black/80 text-white"
+            className="bg-black hover:bg-black/80 text-white w-full sm:w-auto"
           >
             Download App
           </Button>

@@ -8,7 +8,7 @@ const Banner = () => {
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-24">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:pl-7">
           <div className="w-full">
-            <div className="inline-block mb-4"> 
+            <div className="inline-block mb-4">
               <span className="bg-primary/10 text-primary px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
                 Starting From €2.70/Day
               </span>
@@ -25,7 +25,9 @@ const Banner = () => {
             </p>
 
             <div className="search-wrapper relative mx-auto max-w-3xl">
-              <button className="floating-btn text-xs sm:text-sm">Find Closest Locations</button>
+              <button className="floating-btn text-xs sm:text-sm">
+                Find Closest Locations
+              </button>
 
               <div className="search-container flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-2 sm:gap-4">
                 <div className="search-input flex-1 min-w-0">
@@ -39,7 +41,9 @@ const Banner = () => {
 
                 <div className="flex items-center justify-center sm:justify-end gap-3 sm:gap-4 md:gap-6 sm:w-auto w-full sm:shrink-0 pt-8 sm:pt-0">
                   <span className="text-gray-300 hidden sm:inline">|</span>
-                  <span className="text-accent text-sm sm:text-base whitespace-nowrap">Today</span>
+                  <span className="text-accent text-sm sm:text-base whitespace-nowrap">
+                    Today
+                  </span>
                   <span className="text-gray-300 hidden sm:inline">|</span>
                   <ClosestLocations />
                 </div>

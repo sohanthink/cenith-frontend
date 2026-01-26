@@ -25,28 +25,36 @@ export default function Step3Location({
   return (
     <div>
       {/* Logo */}
-      <div className="flex items-center gap-2 mb-6">
-        <Image src="/logo-main.svg" alt="Logo" width={100} height={100} />
+      <div className="flex items-center gap-2 mb-4 sm:mb-5 md:mb-6">
+        <Image
+          src="/logo-main.svg"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
+        />
       </div>
 
       {/* Title */}
-      <h3 className="mb-4">Confirm Your Location</h3>
+      <h3 className="mb-3 sm:mb-4">Confirm Your Location</h3>
 
       {/* Progress Bar */}
-      <div className="mb-8">
-        <div className="flex items-center gap-4 mb-2">
+      <div className="mb-6 sm:mb-7 md:mb-8">
+        <div className="flex items-center gap-3 sm:gap-4 mb-2">
           <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
             <div
               className="h-full bg-green-500 rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <span className="text-sm font-medium text-gray-600">{progress}%</span>
+          <span className="text-xs sm:text-sm font-medium text-gray-600 shrink-0">
+            {progress}%
+          </span>
         </div>
       </div>
 
       {/* Form Fields */}
-      <div className="space-y-4 mb-6">
+      <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-5 md:mb-6">
         <Input
           type="text"
           placeholder="1317 Edgewater Drive, Suite 6875"
@@ -58,8 +66,8 @@ export default function Step3Location({
 
       {/* Map Display */}
       <div
-        className="mb-8 bg-gray-100 rounded-lg overflow-hidden"
-        style={{ height: "300px" }}
+        className="mb-6 sm:mb-7 md:mb-8 bg-gray-100 rounded-lg overflow-hidden"
+        style={{ height: "250px" }}
       >
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14736.240867911744!2d88.42299!3d22.576226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1234567890"

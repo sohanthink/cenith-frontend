@@ -26,7 +26,9 @@ const Locations = () => {
                 <h5 className="text-black font-primary text-sm sm:text-base md:text-lg truncate">
                   {locations[0].title}
                 </h5>
-                <p className="text-text text-xs sm:text-sm">{locations[0].rating}</p>
+                <p className="text-text text-xs sm:text-sm">
+                  {locations[0].rating}
+                </p>
               </div>
               <ChevronRight className="text-primary group-hover:text-blue-500 transition-colors shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
             </div>
@@ -46,7 +48,9 @@ const Locations = () => {
                 <h5 className="text-black font-primary text-sm sm:text-base md:text-lg truncate">
                   {locations[1].title}
                 </h5>
-                <p className="text-text text-xs sm:text-sm">{locations[1].rating}</p>
+                <p className="text-text text-xs sm:text-sm">
+                  {locations[1].rating}
+                </p>
               </div>
               <ChevronRight className="text-primary group-hover:text-blue-500 transition-colors shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
             </div>
@@ -66,7 +70,9 @@ const Locations = () => {
                 <h5 className="text-black font-primary text-sm sm:text-base md:text-lg truncate">
                   {locations[2].title}
                 </h5>
-                <p className="text-text text-xs sm:text-sm">{locations[2].rating}</p>
+                <p className="text-text text-xs sm:text-sm">
+                  {locations[2].rating}
+                </p>
               </div>
               <ChevronRight className="text-primary group-hover:text-blue-500 transition-colors shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
             </div>
@@ -86,7 +92,9 @@ const Locations = () => {
                 <h5 className="text-black font-primary text-sm sm:text-base md:text-lg truncate">
                   {locations[3].title}
                 </h5>
-                <p className="text-text text-xs sm:text-sm">{locations[3].rating}</p>
+                <p className="text-text text-xs sm:text-sm">
+                  {locations[3].rating}
+                </p>
               </div>
               <ChevronRight className="text-primary group-hover:text-blue-500 transition-colors shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
             </div>
@@ -106,7 +114,9 @@ const Locations = () => {
                 <h5 className="text-black font-primary text-sm sm:text-base md:text-lg truncate">
                   {locations[4].title}
                 </h5>
-                <p className="text-text text-xs sm:text-sm">{locations[4].rating}</p>
+                <p className="text-text text-xs sm:text-sm">
+                  {locations[4].rating}
+                </p>
               </div>
               <ChevronRight className="text-primary group-hover:text-blue-500 transition-colors shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
             </div>
@@ -126,7 +136,9 @@ const Locations = () => {
                 <h5 className="text-black font-primary text-sm sm:text-base md:text-lg truncate">
                   {locations[5].title}
                 </h5>
-                <p className="text-text text-xs sm:text-sm">{locations[0].rating}</p>
+                <p className="text-text text-xs sm:text-sm">
+                  {locations[0].rating}
+                </p>
               </div>
               <ChevronRight className="text-primary group-hover:text-blue-500 transition-colors shrink-0 w-4 h-4 sm:w-5 sm:h-5" />
             </div>

@@ -96,23 +96,31 @@ export default function Step6Photos({
   return (
     <div>
       {/* Logo */}
-      <div className="flex items-center gap-2 mb-6">
-        <Image src="/logo-main.svg" alt="Logo" width={100} height={100} />
+      <div className="flex items-center gap-2 mb-4 sm:mb-5 md:mb-6">
+        <Image
+          src="/logo-main.svg"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
+        />
       </div>
 
       {/* Title */}
-      <h3 className="mb-4">Add Your Photos</h3>
+      <h3 className="mb-3 sm:mb-4">Add Your Photos</h3>
 
       {/* Progress Bar */}
-      <div className="mb-8">
-        <div className="flex items-center gap-4 mb-2">
+      <div className="mb-6 sm:mb-7 md:mb-8">
+        <div className="flex items-center gap-3 sm:gap-4 mb-2">
           <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
             <div
               className="h-full bg-primary rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <span className="text-sm font-medium text-gray-600">{progress}%</span>
+          <span className="text-xs sm:text-sm font-medium text-gray-600 shrink-0">
+            {progress}%
+          </span>
         </div>
       </div>
 
@@ -123,21 +131,23 @@ export default function Step6Photos({
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onClick={handleBrowseClick}
-          className={`mb-8 border-2 border-dashed rounded-lg p-12 text-center cursor-pointer transition-all ${
+          className={`mb-6 sm:mb-7 md:mb-8 border-2 border-dashed rounded-lg p-6 sm:p-8 md:p-10 lg:p-12 text-center cursor-pointer transition-all ${
             isDragging
               ? "border-primary bg-primary/5"
               : "border-gray-300 hover:border-primary"
           }`}
         >
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
-              <Upload className="w-10 h-10 text-primary" />
+          <div className="flex flex-col items-center gap-3 sm:gap-4">
+            <div className="w-16 h-16 sm:w-[72px] sm:h-[72px] md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center">
+              <Upload className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 text-primary" />
             </div>
             <div>
-              <p className="text-lg font-medium text-text mb-1">
+              <p className="text-base sm:text-lg font-medium text-text mb-1">
                 Drop Your Image Here Or Browse
               </p>
-              <p className="text-sm text-gray-500">Support: JPG/JPEG/PNG</p>
+              <p className="text-xs sm:text-sm text-gray-500">
+                Support: JPG/JPEG/PNG
+              </p>
             </div>
           </div>
           <input
@@ -152,11 +162,13 @@ export default function Step6Photos({
       )}
 
       {/* Photo Guidelines */}
-      <div className="mb-8 space-y-6 grid grid-cols-3 gap-10">
+      <div className="mb-6 sm:mb-7 md:mb-8 space-y-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
         {/* Avoid Cropped Photos */}
         <div>
-          <h4 className="mb-2 text-center">Avoid Cropped Photos</h4>
-          <p className="mb-3 text-center">
+          <h4 className="mb-2 text-center text-sm sm:text-base">
+            Avoid Cropped Photos
+          </h4>
+          <p className="mb-3 text-center text-xs sm:text-sm">
             Show where your business is relative to its surroundings.
           </p>
           <div className="flex flex-col gap-4">
@@ -189,8 +201,10 @@ export default function Step6Photos({
 
         {/* Use Landscape Format */}
         <div>
-          <h4 className="mb-2 text-center">Use Landscape Format</h4>
-          <p className="mb-3 text-center">
+          <h4 className="mb-2 text-center text-sm sm:text-base">
+            Use Landscape Format
+          </h4>
+          <p className="mb-3 text-center text-xs sm:text-sm">
             Show where your business is relative to its surroundings.
           </p>
           <div className="flex flex-col gap-4">
@@ -222,8 +236,10 @@ export default function Step6Photos({
         </div>
         {/* Avoid  too many elements */}
         <div>
-          <h4 className="mb-2 text-center">Avoid too many elements</h4>
-          <p className="mb-3 text-center">
+          <h4 className="mb-2 text-center text-sm sm:text-base">
+            Avoid too many elements
+          </h4>
+          <p className="mb-3 text-center text-xs sm:text-sm">
             Show where your business is relative to its surroundings.
           </p>
           <div className="flex flex-col gap-4">
@@ -257,14 +273,16 @@ export default function Step6Photos({
 
       {/* Uploaded Photos Preview */}
       {formData.photos.length > 0 && (
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h4 className="text-lg font-semibold text-text">Uploaded Photos</h4>
-            <span className="text-sm text-gray-600">
+        <div className="mb-6 sm:mb-7 md:mb-8">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
+            <h4 className="text-base sm:text-lg font-semibold text-text">
+              Uploaded Photos
+            </h4>
+            <span className="text-xs sm:text-sm text-gray-600">
               {currentPhotoIndex + 1} of {maxPhotos}
             </span>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {previewUrls.map((url, index) => (
               <div
                 key={index}

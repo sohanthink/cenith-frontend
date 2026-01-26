@@ -31,16 +31,28 @@ const BookingSection = () => {
           <form className="space-y-4 sm:space-y-6">
             <div className="flex flex-col items-center justify-between space-y-4 sm:space-y-6 md:space-y-7">
               <div className="flex items-center justify-between w-full border-b-2 border-dashed border-b-text/50 pb-4 sm:pb-6 md:pb-7">
-                <h4 className="text-black text-sm sm:text-base md:text-lg">1 bag/day</h4>
-                <h4 className="text-black text-sm sm:text-base md:text-lg font-semibold">5$</h4>
+                <h4 className="text-black text-sm sm:text-base md:text-lg">
+                  1 bag/day
+                </h4>
+                <h4 className="text-black text-sm sm:text-base md:text-lg font-semibold">
+                  5$
+                </h4>
               </div>
               <div className="flex items-center justify-between w-full border-b-2 border-dashed border-b-text/50 pb-4 sm:pb-6 md:pb-7">
-                <h4 className="text-black text-sm sm:text-base md:text-lg">5-6 bags/day</h4>
-                <h4 className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-right">30% discount From 17.5$</h4>
+                <h4 className="text-black text-sm sm:text-base md:text-lg">
+                  5-6 bags/day
+                </h4>
+                <h4 className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-right">
+                  30% discount From 17.5$
+                </h4>
               </div>
               <div className="flex items-center justify-between w-full border-b-2 border-dashed border-b-text/50 pb-4 sm:pb-6 md:pb-7">
-                <h4 className="text-black text-sm sm:text-base md:text-lg">From 7th bag</h4>
-                <h4 className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-right">50% discount From 17.5$</h4>
+                <h4 className="text-black text-sm sm:text-base md:text-lg">
+                  From 7th bag
+                </h4>
+                <h4 className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-right">
+                  50% discount From 17.5$
+                </h4>
               </div>
             </div>
 

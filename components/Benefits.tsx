@@ -19,7 +19,9 @@ const Benefits = ({ image, title }: IProps) => {
         />
       </div>
 
-      <h3 className="text-center mt-4 sm:mt-6 text-sm sm:text-base md:text-lg">{title}</h3>
+      <h3 className="text-center mt-4 sm:mt-6 text-sm sm:text-base md:text-lg">
+        {title}
+      </h3>
 
       <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-primary absolute -bottom-6 sm:-bottom-7 right-1/2 translate-x-1/2 group-hover:translate-y-1/2 transition-all duration-300"></div>
     </div>

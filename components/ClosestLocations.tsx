@@ -11,7 +11,10 @@ const ClosestLocations = () => {
         className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center hover:opacity-80 transition-opacity"
         aria-label="Decrease bag count"
       >
-        <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" color="var(--color-yellow)" />
+        <Minus
+          className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+          color="var(--color-yellow)"
+        />
       </button>
       <span className="text-xs sm:text-sm font-medium text-accent whitespace-nowrap">
         {bags} Bags
@@ -21,7 +24,10 @@ const ClosestLocations = () => {
         className="w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center hover:opacity-80 transition-opacity"
         aria-label="Increase bag count"
       >
-        <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" color="var(--color-yellow)" />
+        <Plus
+          className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+          color="var(--color-yellow)"
+        />
       </button>
     </div>
   );

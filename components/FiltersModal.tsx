@@ -62,24 +62,27 @@ const FiltersModal = ({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        onClick={(e) => e.stopPropagation()}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+        onClick={onClose}
       >
-        <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative animate-in fade-in zoom-in duration-200">
-          <div className="flex items-center justify-between mb-6">
+        <div
+          className="bg-white rounded-xl shadow-2xl w-full max-w-md p-4 sm:p-6 relative animate-in fade-in zoom-in duration-200 max-h-[90vh] overflow-y-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex items-center justify-between mb-4 sm:mb-6">
             <h3 className="text-black font-primary">Filters</h3>
             <button
               onClick={onClose}
-              className="p-1 hover:bg-primary/10 rounded-full transition-colors"
+              className="p-1 hover:bg-primary/10 rounded-full transition-colors shrink-0"
               aria-label="Close filters"
             >
               <X className="w-5 h-5 text-black" />
             </button>
           </div>
 
-          <div className="space-y-4 mb-6">
-            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-4">
-              <div className="relative flex items-center justify-center">
+          <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-3 sm:pb-4">
+              <div className="relative flex items-center justify-center shrink-0">
                 <input
                   type="checkbox"
                   checked={filters.open24Hours}
@@ -104,8 +107,8 @@ const FiltersModal = ({
             </label>
 
             {/* Highly rated */}
-            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-4">
-              <div className="relative flex items-center justify-center">
+            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-3 sm:pb-4">
+              <div className="relative flex items-center justify-center shrink-0">
                 <input
                   type="checkbox"
                   checked={filters.highlyRated}
@@ -130,8 +133,8 @@ const FiltersModal = ({
             </label>
 
             {/* Open now */}
-            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-4">
-              <div className="relative flex items-center justify-center">
+            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-3 sm:pb-4">
+              <div className="relative flex items-center justify-center shrink-0">
                 <input
                   type="checkbox"
                   checked={filters.openNow}
@@ -154,8 +157,8 @@ const FiltersModal = ({
             </label>
 
             {/* Lockers */}
-            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-4">
-              <div className="relative flex items-center justify-center">
+            <label className="flex items-center gap-3 cursor-pointer group border-b border-gray/20 pb-3 sm:pb-4">
+              <div className="relative flex items-center justify-center shrink-0">
                 <input
                   type="checkbox"
                   checked={filters.lockers}
@@ -179,7 +182,7 @@ const FiltersModal = ({
           </div>
 
           {/* Action Buttons */}
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             <Button
               variant="secondary"
               size="md"
@@ -192,7 +195,7 @@ const FiltersModal = ({
 
             <button
               onClick={handleClear}
-              className="w-full text-center text-primary hover:underline text-sm font-primary transition-colors py-1"
+              className="w-full text-center text-primary hover:underline text-sm font-primary transition-colors py-1 sm:py-2"
             >
               clear
             </button>

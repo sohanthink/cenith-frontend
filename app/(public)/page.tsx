@@ -54,7 +54,9 @@ export default function Home() {
 
       <section className="relative overflow-hidden py-12 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <h2 className="text-center text-black mb-8 sm:mb-12 px-4">How it works</h2>
+          <h2 className="text-center text-black mb-8 sm:mb-12 px-4">
+            How it works
+          </h2>
           <div className="hidden lg:flex w-[72%] max-w-4xl items-center justify-center h-full -z-1 absolute -top-10 left-1/2 -translate-x-1/2">
             <Image
               src="/home/line-bg.svg"
@@ -103,12 +105,17 @@ export default function Home() {
               <h2 className="text-white font-primary">Book In 3 Taps</h2>
               <p className="mb-6 font-secondary mt-4 text-white">
                 Instantly find locations nearby to drop off your luggage
-                <span className="hidden sm:inline"><br /></span>
+                <span className="hidden sm:inline">
+                  <br />
+                </span>
                 <span className="sm:hidden"> </span>
                 wherever you go.
               </p>
               <div className="flex justify-center lg:justify-start">
-                <Button variant="ghost" className="bg-white text-primary text-sm sm:text-base">
+                <Button
+                  variant="ghost"
+                  className="bg-white text-primary text-sm sm:text-base"
+                >
                   Find Closest Locations
                 </Button>
               </div>
@@ -140,10 +147,15 @@ export default function Home() {
 
       <section className="container mx-auto px-4 sm:px-6 py-12 md:py-24">
         <div>
-          <h2 className="text-center text-black mb-8 sm:mb-12 md:mb-20 px-4">Our Partners</h2>
+          <h2 className="text-center text-black mb-8 sm:mb-12 md:mb-20 px-4">
+            Our Partners
+          </h2>
           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16">
             {partners.map((partner, index) => (
-              <div key={index} className="shrink-0 w-24 sm:w-28 md:w-32 lg:w-40 h-auto">
+              <div
+                key={index}
+                className="shrink-0 w-24 sm:w-28 md:w-32 lg:w-40 h-auto"
+              >
                 <Image
                   src={partner.logo}
                   alt={partner.name}

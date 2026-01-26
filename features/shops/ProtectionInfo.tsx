@@ -16,23 +16,33 @@ const ProtectionInfo = () => {
     <div>
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between text-left"
+        className="w-full flex items-center justify-between text-left gap-2"
       >
         <div className="flex items-center gap-2">
-          <Shield size={18} className="text-blue-600" />
+          <Shield size={18} className="text-blue-600 shrink-0" />
           <span className="font-medium">Protection up to $30,000</span>
         </div>
-        {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+        {isExpanded ? (
+          <ChevronUp size={18} className="shrink-0" />
+        ) : (
+          <ChevronDown size={18} className="shrink-0" />
+        )}
       </button>
 
       {isExpanded && (
-        <div className="mt-4 space-y-2">
+        <div className="mt-3 sm:mt-4 space-y-2">
           <div className="flex items-center gap-2 text-sm">
-            <Image src="/shop/bag-icon.svg" alt="bag" width={18} height={18} />
+            <Image
+              src="/shop/bag-icon.svg"
+              alt="bag"
+              width={18}
+              height={18}
+              className="shrink-0"
+            />
             <span>£ 3,000 bag coverage</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <Headphones size={16} className="text-blue-600" />
+            <Headphones size={16} className="text-blue-600 shrink-0" />
             <span>24/7 customer support</span>
           </div>
         </div>

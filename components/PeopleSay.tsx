@@ -5,12 +5,12 @@ import React from "react";
 const PeopleSay = ({ dataCount }: { dataCount: number }) => {
   return (
     <section className="container mx-auto px-4 sm:px-6 py-12 md:pb-24">
-      <h2 className="text-center text-black mb-8 sm:mb-12 px-4">What people say about us</h2>
+      <h2 className="text-center text-black mb-8 sm:mb-12 px-4">
+        What people say about us
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         <div className="flex flex-col items-center justify-center gap-2 border-2 border-primary border-dashed rounded-xl p-6 sm:p-12 md:p-16 lg:p-24">
-          <p className="text-black font-bold font-primary">
-            Excellent
-          </p>
+          <p className="text-black font-bold font-primary">Excellent</p>
           <h2 className="text-black font-primary">5.0</h2>
           <div className="flex items-center gap-1.5 sm:gap-2">
             {[...Array(5)].map((_, i) => (
@@ -23,13 +23,21 @@ const PeopleSay = ({ dataCount }: { dataCount: number }) => {
               />
             ))}
           </div>
-          <p className="text-text text-xs sm:text-sm md:text-base text-center">Based on 15,29 reviews</p>
-          <Link href="/reviews" className="text-primary hover:underline text-xs sm:text-sm md:text-base mt-1">
+          <p className="text-text text-xs sm:text-sm md:text-base text-center">
+            Based on 15,29 reviews
+          </p>
+          <Link
+            href="/reviews"
+            className="text-primary hover:underline text-xs sm:text-sm md:text-base mt-1"
+          >
             See all reviews
           </Link>
         </div>
         {reviews.slice(0, dataCount).map((item, index) => (
-          <div key={index} className="bg-himalayan-white rounded-xl px-5 sm:px-6 md:px-7 py-8 sm:py-10 md:py-12">
+          <div
+            key={index}
+            className="bg-himalayan-white rounded-xl px-5 sm:px-6 md:px-7 py-8 sm:py-10 md:py-12"
+          >
             <div className="flex items-center gap-1.5 sm:gap-2">
               {[...Array(5)].map((_, i) => (
                 <StarIcon
@@ -41,9 +49,15 @@ const PeopleSay = ({ dataCount }: { dataCount: number }) => {
                 />
               ))}
             </div>
-            <p className="my-4 sm:my-5 md:my-6 text-text text-sm sm:text-base">{item.description}</p>
-            <h5 className="text-black font-bold font-primary text-sm sm:text-base md:text-lg">{item.name}</h5>
-            <p className="text-text mt-1 text-xs sm:text-sm md:text-base">{item.designation}</p>
+            <p className="my-4 sm:my-5 md:my-6 text-text text-sm sm:text-base">
+              {item.description}
+            </p>
+            <h5 className="text-black font-bold font-primary text-sm sm:text-base md:text-lg">
+              {item.name}
+            </h5>
+            <p className="text-text mt-1 text-xs sm:text-sm md:text-base">
+              {item.designation}
+            </p>
           </div>
         ))}
       </div>

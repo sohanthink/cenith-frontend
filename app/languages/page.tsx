@@ -25,7 +25,15 @@ export default function LanguagesPage() {
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <header className="flex justify-between items-center px-8 py-6">
-        <Image src="/logo-main.svg" alt="logo" width={180} height={180} />
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo-main.svg"
+            alt="logo"
+            width={100}
+            height={100}
+            priority
+          />
+        </Link>
         <Link href="/faq" className="text-primary font-medium hover:underline">
           Need help?
         </Link>

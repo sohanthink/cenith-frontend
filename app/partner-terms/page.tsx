@@ -15,7 +15,7 @@ export default function PartnerTermsPage() {
       {/* <PageFour /> */}
       {/* <PageFive /> */}
       {/* <PageSix /> */}
-      <PageSeven />
+      {/* <PageSeven /> */}
     </div>
   );
 }

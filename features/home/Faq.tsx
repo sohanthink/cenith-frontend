@@ -18,7 +18,10 @@ const Faq = ({
 
           <div className="space-y-3 sm:space-y-4">
             {faqsData.map((faq) => (
-              <div key={faq.id} className="border-b-2 border-b-text/50 pb-3 sm:pb-4 md:pb-5">
+              <div
+                key={faq.id}
+                className="border-b-2 border-b-text/50 pb-3 sm:pb-4 md:pb-5"
+              >
                 <button
                   onClick={() =>
                     setExpandedFaq(expandedFaq === faq.id ? null : faq.id)
@@ -59,7 +62,9 @@ const Faq = ({
                 </button>
 
                 {expandedFaq === faq.id && (
-                  <p className="px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5 text-black pt-2 sm:pt-3 md:pt-4 text-sm sm:text-base">{faq.answer}</p>
+                  <p className="px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5 text-black pt-2 sm:pt-3 md:pt-4 text-sm sm:text-base">
+                    {faq.answer}
+                  </p>
                 )}
               </div>
             ))}

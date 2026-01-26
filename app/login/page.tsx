@@ -161,14 +161,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="container mx-auto flex items-center justify-center pt-20">
-      <div className="w-full overflow-hidden flex">
+    <div className="container mx-auto flex items-center justify-center pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-6">
+      <div className="w-full overflow-hidden flex flex-col lg:flex-row min-h-[calc(100vh-200px)]">
         <FormSidebar
           steps={STEPS}
           currentStep={currentStep}
           title="Tel Us About Yourself"
         />
-        <div className="flex-1 bg-white p-14 overflow-y-auto">
+        <div className="flex-1 bg-white p-4 sm:p-6 md:p-8 lg:p-10 xl:p-14 overflow-y-auto">
           {renderStep()}
         </div>
       </div>

@@ -112,32 +112,38 @@ export default function Step1YourDetails({
   return (
     <div>
       {/* Logo */}
-      <div className="flex items-center gap-2 mb-6">
-        <Image src="/logo-main.svg" alt="Logo" width={100} height={100} />
+      <div className="flex items-center gap-2 mb-4 sm:mb-5 md:mb-6">
+        <Image
+          src="/logo-main.svg"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 "
+        />
       </div>
 
       {!showOTP ? (
         <>
           {/* Title */}
-          <h3 className="mb-4">Your Details</h3>
+          <h3 className="mb-3 sm:mb-4">Your Details</h3>
 
           {/* Progress Bar */}
-          <div className="mb-8">
-            <div className="flex items-center gap-4 mb-2">
+          <div className="mb-6 sm:mb-7 md:mb-8">
+            <div className="flex items-center gap-3 sm:gap-4 mb-2">
               <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-[#DC3545] rounded-full transition-all duration-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <span className="text-sm font-medium text-gray-600">
+              <span className="text-xs sm:text-sm font-medium text-gray-600 shrink-0">
                 {progress}%
               </span>
             </div>
           </div>
 
           {/* Form Fields */}
-          <div className="space-y-4 mb-8">
+          <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-7 md:mb-8">
             <Input
               type="text"
               placeholder="First Name"
@@ -173,9 +179,9 @@ export default function Step1YourDetails({
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
               >
                 {showPassword ? (
-                  <EyeOff className="w-5 h-5" />
+                  <EyeOff className="w-4 h-4 sm:w-5 sm:h-5" />
                 ) : (
-                  <Eye className="w-5 h-5" />
+                  <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                 )}
               </button>
             </div>
@@ -201,25 +207,25 @@ export default function Step1YourDetails({
       ) : (
         <>
           {/* OTP Verification Section */}
-          <h3 className="mb-4">OTP Verification</h3>
+          <h3 className="mb-3 sm:mb-4">OTP Verification</h3>
 
           {/* Progress Bar */}
-          <div className="mb-8">
-            <div className="flex items-center gap-4 mb-2">
+          <div className="mb-6 sm:mb-7 md:mb-8">
+            <div className="flex items-center gap-3 sm:gap-4 mb-2">
               <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-[#FDCB6E] rounded-full transition-all duration-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <span className="text-sm font-medium text-gray-600">
+              <span className="text-xs sm:text-sm font-medium text-gray-600 shrink-0">
                 {progress}%
               </span>
             </div>
           </div>
 
           {/* OTP Instructions */}
-          <div className="mb-6">
+          <div className="mb-4 sm:mb-5 md:mb-6">
             <h4 className="mb-2">Enter The Confirmation Code</h4>
             <p className="text-text text-sm">
               Enter the code to confirm your email.
@@ -227,7 +233,7 @@ export default function Step1YourDetails({
           </div>
 
           {/* OTP Input Fields */}
-          <div className="flex gap-6 mb-6 justify-center items-center mx-auto w-2/3">
+          <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-6 justify-center items-center mx-auto w-full sm:w-4/5 md:w-2/3">
             {otpValues.map((value, index) => (
               <Input
                 key={index}
@@ -241,7 +247,7 @@ export default function Step1YourDetails({
                 onChange={(e) => handleOTPChange(index, e.target.value)}
                 onKeyDown={(e) => handleOTPKeyDown(index, e)}
                 onPaste={handlePaste}
-                className="w-12 h-16 text-center text-lg font-bold border-2 border-gray/50 rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                className="w-10 h-14 sm:w-11 sm:h-[60px] md:w-12 md:h-16 text-center text-base sm:text-lg font-bold border-2 border-gray/50 rounded-full focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
               />
             ))}
           </div>
@@ -251,13 +257,13 @@ export default function Step1YourDetails({
             onClick={handleVerifyOTP}
             variant="primary"
             fullWidth
-            className="mb-4"
+            className="mb-3 sm:mb-4"
           >
             Verify & Proceed
           </Button>
 
           {/* Resend Code Link */}
-          <div className="text-center mb-10">
+          <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <span className="text-text text-sm">
               Didn&apos;t Get A Code?{" "}
               <button
@@ -270,9 +276,9 @@ export default function Step1YourDetails({
           </div>
 
           {/* SMS Alternative */}
-          <div className="bg-himalayan-white rounded-lg p-4 flex items-center gap-3">
-            <Info className="w-5 h-5 text-primary shrink-0" />
-            <span className="text-text text-sm">
+          <div className="bg-himalayan-white rounded-lg p-3 sm:p-4 flex items-center gap-2 sm:gap-3">
+            <Info className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+            <span className="text-text text-xs sm:text-sm">
               Didn&apos;t get the code?{" "}
               <button
                 onClick={handleSendSMS}

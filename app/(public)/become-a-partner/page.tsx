@@ -31,9 +31,9 @@ const whyBecomeData = [
 export default function BecomeAPartner() {
   return (
     <>
-      <section className="container mx-auto px-2 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-6 flex flex-col items-start justify-center">
+      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6 flex flex-col items-start justify-center order-2 lg:order-1">
             <h1>
               More customers, <br />{" "}
               <span className="text-primary">More money</span>
@@ -41,24 +41,28 @@ export default function BecomeAPartner() {
             <p>
               Start a new revenue stream by becoming a Cenith Partner today.
             </p>
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" className="w-full sm:w-auto">
               Become a Partner
             </Button>
           </div>
-          <div className="flex items-start justify-center">
+          <div className="flex items-center justify-center order-1 lg:order-2">
             <Image
               src="/become-partner/image-1.png"
               alt="become-a-partner-1"
               width={500}
               height={500}
+              className="w-full h-auto max-w-md sm:max-w-lg md:max-w-xl lg:max-w-full"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
             />
           </div>
         </div>
       </section>
-      <section className="bg-himalayan-white mt-24">
-        <div className="container mx-auto px-2 sm:px-6 py-12 md:py-24 ">
-          <h2 className="text-center mb-14">Why become a Partner?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <section className="bg-himalayan-white mt-12 sm:mt-16 md:mt-20 lg:mt-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+          <h2 className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+            Why become a Partner?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {whyBecomeData.map((item) => (
               <WhyBecome
                 key={item.title}
@@ -80,11 +84,12 @@ export default function BecomeAPartner() {
             width={1000}
             height={1000}
             className="w-full h-full object-cover"
+            sizes="100vw"
           />
         </div>
-        <div className="container mx-auto px-2 sm:px-6 py-12 md:py-24 z-10 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-6 flex flex-col items-start justify-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 z-10 relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6 flex flex-col items-start justify-center order-2 lg:order-1">
               <h2>Apply to become a Cenith Partner</h2>
               <p>
                 Not only do we advertise your business and send extra customers
@@ -92,18 +97,20 @@ export default function BecomeAPartner() {
                 part of making the Bounce experience sublime.
               </p>
               <Button
-                className="bg-white !text-black hover:bg-white/90 !font-bold"
+                className="bg-white !text-black hover:bg-white/90 !font-bold w-full sm:w-auto"
                 size="lg"
               >
                 Apply now
               </Button>
             </div>
-            <div className="flex items-start justify-center">
+            <div className="flex items-center justify-center order-1 lg:order-2">
               <Image
                 src="/become-partner/image-2.png"
                 alt="become-a-partner-2"
                 width={500}
                 height={500}
+                className="w-full h-auto max-w-md sm:max-w-lg md:max-w-xl lg:max-w-full"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px"
               />
             </div>
           </div>

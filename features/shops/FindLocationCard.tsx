@@ -45,7 +45,7 @@ const FindLocationCard = () => {
                   alt="Mobile app"
                   width={1000}
                   height={1000}
-                  className="w-full h-full object-contain relative z-10"
+                  className="w-full h-full object-contain relative z-10 hidden lg:block"
                 />
               </div>
             </div>

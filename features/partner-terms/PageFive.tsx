@@ -32,31 +32,34 @@ export default function PageFive() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col lg:flex-row min-h-screen">
       {/* Left Side - Illustration */}
-      <div className="w-1/2">
+      <div className="w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-screen">
         <Image
           src="/suitcase-illustration.png"
           alt="Travel Illustration"
           width={1000}
           height={1000}
           className="w-full h-full object-cover"
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
       </div>
 
       {/* Right Side - Phone Number Form */}
-      <div className="w-1/2 bg-white flex items-center justify-center p-24">
-        <div className="w-full">
+      <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-24">
+        <div className="w-full max-w-md">
           {/* Title */}
-          <h2 className="text-black mb-6 mt-3">Enter Your Phone Number</h2>
+          <h2 className="text-black mb-4 sm:mb-5 md:mb-6 mt-2 sm:mt-3">
+            Enter Your Phone Number
+          </h2>
 
           {/* Subtitle */}
-          <p className="text-text mb-8">
+          <p className="text-text mb-6 sm:mb-7 md:mb-8">
             You Will Send Code To Verify This Phone Number.
           </p>
 
           {/* Phone Number Input */}
-          <div className="mb-16">
+          <div className="mb-10 sm:mb-12 md:mb-14 lg:mb-16">
             <div className="relative">
               <PhoneInput
                 international
@@ -97,11 +100,16 @@ export default function PageFive() {
                 padding: 4px 8px;
                 border: none;
                 background: transparent;
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 500;
                 cursor: pointer;
                 color: #1f2937;
                 outline: none;
+              }
+              @media (min-width: 640px) {
+                .phone-input-custom .PhoneInputCountrySelect {
+                  font-size: 14px;
+                }
               }
               .phone-input-custom .PhoneInputCountrySelectArrow {
                 opacity: 0.6;
@@ -111,11 +119,17 @@ export default function PageFive() {
               }
               .phone-input-custom .PhoneInputInput {
                 flex: 1;
-                padding: 12px 16px;
+                padding: 10px 12px;
                 border: none;
-                font-size: 16px;
+                font-size: 14px;
                 outline: none;
                 background: transparent;
+              }
+              @media (min-width: 640px) {
+                .phone-input-custom .PhoneInputInput {
+                  padding: 12px 16px;
+                  font-size: 16px;
+                }
               }
               .phone-input-custom .PhoneInputInput::placeholder {
                 color: #9ca3af;
@@ -124,14 +138,18 @@ export default function PageFive() {
           </div>
 
           {/* Error Message */}
-          {error && <p className="text-red-500 text-sm mb-6 mt-1">{error}</p>}
+          {error && (
+            <p className="text-red-500 text-xs sm:text-sm mb-4 sm:mb-5 md:mb-6 mt-1">
+              {error}
+            </p>
+          )}
 
           {/* Continue Button */}
           <Button
             onClick={handleContinue}
             variant="primary"
             fullWidth
-            className={`mb-6 ${
+            className={`mb-4 sm:mb-5 md:mb-6 ${
               !phoneNumber
                 ? "!bg-gray/30 hover:!bg-gray/20 !text-black !cursor-not-allowed"
                 : ""
@@ -145,7 +163,7 @@ export default function PageFive() {
             <Button
               onClick={handleSkip}
               variant="link"
-              className="text-primary hover:underline font-medium text-sm"
+              className="text-primary hover:underline font-medium text-xs sm:text-sm"
             >
               Skip For Now
             </Button>

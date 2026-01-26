@@ -111,44 +111,52 @@ export default function PageThree() {
     : "No date selected";
 
   return (
-    <div className="min-h-screen flex gap-10 justify-center items-center mx-auto container">
+    <div className="min-h-screen flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-10 justify-center items-stretch lg:items-center mx-auto container px-4 sm:px-6">
       {/* Left Side - Blue Section with Calendar */}
-      <div className="w-1/2 bg-primary flex flex-col items-center justify-start p-10">
+      <div className="w-full lg:w-1/2 bg-primary flex flex-col items-center justify-start p-6 sm:p-8 md:p-10">
         {/* Logo */}
-        <div className="mb-10">
-          <Image src="/logo-white.svg" alt="Logo" width={150} height={150} />
+        <div className="mb-6 sm:mb-8 md:mb-10">
+          <Image
+            src="/logo-white.svg"
+            alt="Logo"
+            width={150}
+            height={150}
+            className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-full lg:h-full"
+          />
         </div>
 
         {/* Meeting Title */}
-        <h4 className="text-white text-center mb-8">
+        <h4 className="text-white text-center mb-6 sm:mb-7 md:mb-8">
           Meet With Cenith Onboarding Team
         </h4>
 
         {/* Calendar */}
         <div className="w-full max-w-sm">
           {/* Month Navigation */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-4 sm:mb-5 md:mb-6">
             <button
               onClick={previousMonth}
-              className="text-white hover:opacity-80 transition"
+              className="text-white hover:opacity-80 transition shrink-0"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-            <span className="text-white font-medium text-lg">{monthYear}</span>
+            <span className="text-white font-medium text-base sm:text-lg">
+              {monthYear}
+            </span>
             <button
               onClick={nextMonth}
-              className="text-white hover:opacity-80 transition"
+              className="text-white hover:opacity-80 transition shrink-0"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
 
           {/* Days of Week */}
-          <div className="grid grid-cols-7 gap-2 mb-3">
+          <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-2 sm:mb-3">
             {daysOfWeek.map((day, index) => (
               <div
                 key={index}
-                className="text-white/70 text-sm font-medium text-center"
+                className="text-white/70 text-xs sm:text-sm font-medium text-center"
               >
                 {day}
               </div>
@@ -156,9 +164,9 @@ export default function PageThree() {
           </div>
 
           {/* Calendar Grid */}
-          <div className="space-y-2 mb-8">
+          <div className="space-y-1 sm:space-y-2 mb-6 sm:mb-7 md:mb-8">
             {calendarDays.map((week, weekIndex) => (
-              <div key={weekIndex} className="grid grid-cols-7 gap-2">
+              <div key={weekIndex} className="grid grid-cols-7 gap-1 sm:gap-2">
                 {week.map((date, dayIndex) => {
                   const inCurrentMonth = isCurrentMonth(date);
                   const todayDate = isToday(date);
@@ -170,7 +178,7 @@ export default function PageThree() {
                       onClick={() => date && setSelectedDate(date)}
                       disabled={!date || !inCurrentMonth}
                       className={`
-                        h-10 rounded-lg text-sm font-medium transition-all
+                        h-8 sm:h-9 md:h-10 rounded-lg text-xs sm:text-sm font-medium transition-all
                         ${!inCurrentMonth ? "text-white/30" : ""}
                         ${
                           todayDate && inCurrentMonth
@@ -192,14 +200,14 @@ export default function PageThree() {
           </div>
 
           {/* Calendar Actions */}
-          <div className="flex gap-3 justify-end">
+          <div className="flex gap-2 sm:gap-3 justify-end">
             <button
               onClick={() => setSelectedDate(null)}
-              className="text-white text-sm font-medium px-4 py-2 hover:bg-white/10 rounded-lg transition"
+              className="text-white text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 sm:py-2 hover:bg-white/10 rounded-lg transition"
             >
               Cancel
             </button>
-            <button className="bg-yellow text-primary text-sm font-bold px-6 py-2 rounded-lg hover:bg-yellow/90 transition">
+            <button className="bg-yellow text-primary text-xs sm:text-sm font-bold px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg hover:bg-yellow/90 transition">
               Done
             </button>
           </div>
@@ -207,49 +215,53 @@ export default function PageThree() {
       </div>
 
       {/* Right Side - Meeting Details */}
-      <div className="w-1/2 bg-white px-12 py-10">
+      <div className="w-full lg:w-1/2 bg-white px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-6 sm:py-8 md:py-10">
         {/* Progress Steps */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-10 md:mb-12">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <div className="flex justify-center items-center gap-2">
-                <div className="w-4 h-4 bg-primary rounded-full"></div>
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-primary rounded-full"></div>
               </div>
             </div>
             <div className="flex-1 h-1 bg-gray/20"></div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <div className="flex flex-col items-center gap-2">
-                <div className="w-4 h-4 bg-gray rounded-full"></div>
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gray rounded-full"></div>
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-8 justify-between mt-4">
-            <span className="text-sm font-medium text-black">Choose Time</span>
-            <span className="text-sm font-medium text-black">Your Info</span>
+          <div className="flex items-center gap-4 sm:gap-6 md:gap-8 justify-between mt-3 sm:mt-4">
+            <span className="text-xs sm:text-sm font-medium text-black">
+              Choose Time
+            </span>
+            <span className="text-xs sm:text-sm font-medium text-black">
+              Your Info
+            </span>
           </div>
         </div>
 
         {/* Meeting Duration */}
-        <div className="mb-8">
-          <h5 className="text-black mb-3">Meeting Duration</h5>
+        <div className="mb-6 sm:mb-7 md:mb-8">
+          <h5 className="text-black mb-2 sm:mb-3">Meeting Duration</h5>
           <input
             type="text"
             value="30 Mins"
             readOnly
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-center text-primary font-medium focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg text-center text-primary font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm sm:text-base"
           />
         </div>
 
         {/* What Time Works Best */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-5 md:mb-6">
           <h5 className="text-black mb-2">What Time Works Best?</h5>
-          <p className="text-black mb-4">
+          <p className="text-black mb-3 sm:mb-4 text-sm sm:text-base">
             Showing Times For{" "}
             <span className="font-bold">{formattedSelectedDate}</span>
           </p>
 
           {/* Timezone Selector */}
-          <select className="w-full px-4 py-3  text-primary font-medium mb-6">
+          <select className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-primary font-medium mb-4 sm:mb-5 md:mb-6 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm sm:text-base">
             <option>UTC +01:00 (Europe) Central European Time</option>
             <option>UTC +00:00 (GMT) Greenwich Mean Time</option>
             <option>UTC -05:00 (EST) Eastern Standard Time</option>
@@ -257,13 +269,13 @@ export default function PageThree() {
           </select>
 
           {/* Time Slots */}
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             {timeSlots.map((time, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedTime(time)}
                 className={`
-                  w-full px-4 py-3 rounded-lg border-2 font-medium transition-all
+                  w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border-2 font-medium transition-all text-sm sm:text-base
                   ${
                     selectedTime === time
                       ? "border-primary bg-primary/5 text-primary"

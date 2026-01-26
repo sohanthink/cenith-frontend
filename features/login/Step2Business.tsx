@@ -25,28 +25,36 @@ export default function Step2Business({
   return (
     <div>
       {/* Logo */}
-      <div className="flex items-center gap-2 mb-6">
-        <Image src="/logo-main.svg" alt="Logo" width={100} height={100} />
+      <div className="flex items-center gap-2 mb-4 sm:mb-5 md:mb-6">
+        <Image
+          src="/logo-main.svg"
+          alt="Logo"
+          width={100}
+          height={100}
+          className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
+        />
       </div>
 
       {/* Title */}
-      <h3 className="mb-4">Your Business Details</h3>
+      <h3 className="mb-3 sm:mb-4">Your Business Details</h3>
 
       {/* Progress Bar */}
-      <div className="mb-8">
-        <div className="flex items-center gap-4 mb-2">
+      <div className="mb-6 sm:mb-7 md:mb-8">
+        <div className="flex items-center gap-3 sm:gap-4 mb-2">
           <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
             <div
               className="h-full bg-[#FDCB6E] rounded-full transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <span className="text-sm font-medium text-gray-600">{progress}%</span>
+          <span className="text-xs sm:text-sm font-medium text-gray-600 shrink-0">
+            {progress}%
+          </span>
         </div>
       </div>
 
       {/* Form Fields */}
-      <div className="space-y-4 mb-8">
+      <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-7 md:mb-8">
         <Input
           type="text"
           placeholder="Business Name"
