@@ -40,7 +40,7 @@ const Footer = () => {
               </div>
 
               {/* Right Side - Phone Image */}
-              <div className="absolute bottom-0 right-0 h-[140%]">
+              <div className="absolute bottom-0 right-0 h-[140%] hidden lg:block">
                 <Image
                   src="/footer/hand-mobile.png"
                   alt="Mobile app"
